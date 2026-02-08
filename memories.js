@@ -1,5 +1,5 @@
 const memories = document.querySelectorAll(".memory");
-const btn = document.getElementById("continue");
+const btnContainer = document.getElementById("dayButtons");
 
 function reveal(){
   let visibleCount=0;
@@ -14,13 +14,13 @@ function reveal(){
   });
 
   if(visibleCount===memories.length){
-    btn.style.display="block";
+    btnContainer.style.display="block";
   }
 }
 
 window.addEventListener("scroll",reveal);
 reveal();
 
-btn.onclick=()=>{
-  window.location.href="valentine.html";
-};
+function openDay(page){
+  window.location.href = page;
+}
